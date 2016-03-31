@@ -298,6 +298,7 @@ enum lws_context_options {
 	LWS_SERVER_OPTION_VALIDATE_UTF8				= (1 << 8),
 	LWS_SERVER_OPTION_SSL_ECDH				= (1 << 9),
 	LWS_SERVER_OPTION_LIBUV					= (1 << 10),
+	LWS_SERVER_OPTION_UNIX_SOCK				= (1 << 11),
 
 	/****** add new things just above ---^ ******/
 };
@@ -1275,6 +1276,8 @@ extern int lws_extension_callback_pm_deflate(
  *		client
  * @iface:	NULL to bind the listen socket to all interfaces, or the
  *		interface name, eg, "eth2"
+ *		If options specifies LWS_SERVER_OPTION_UNIX_SOCK, this member is
+ *		the pathname of a UNIX domain socket.
  * @protocols:	Array of structures listing supported protocols and a protocol-
  *		specific callback for each one.  The list is ended with an
  *		entry that has a NULL callback pointer.
