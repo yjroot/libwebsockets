@@ -108,6 +108,9 @@ lws_context_init_server(struct lws_context_creation_info *info,
 			return 1;
 		}
 		strcpy(serv_unix.sun_path, info->iface);
+		if (serv_unix.sun_path[0] == '@') {
+			serv_unix.sun_path[0] = '\0';
+		}
 	} else
 #endif
 #ifdef LWS_USE_IPV6

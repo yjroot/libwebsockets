@@ -1277,7 +1277,9 @@ extern int lws_extension_callback_pm_deflate(
  * @iface:	NULL to bind the listen socket to all interfaces, or the
  *		interface name, eg, "eth2"
  *		If options specifies LWS_SERVER_OPTION_UNIX_SOCK, this member is
- *		the pathname of a UNIX domain socket.
+ *		the pathname of a UNIX domain socket. you can use the UNIX domain
+ *		sockets in abstract namespace, by prepending an @ symbole to the
+ *		socket name.
  * @protocols:	Array of structures listing supported protocols and a protocol-
  *		specific callback for each one.  The list is ended with an
  *		entry that has a NULL callback pointer.
